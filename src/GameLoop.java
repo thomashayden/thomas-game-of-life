@@ -1,7 +1,6 @@
+public class GameLoop extends Panel implements Runnable {
 
-public class GameLoop implements Runnable {
-
-	int FRAMES_PER_SECOND = 30;
+	int FRAMES_PER_SECOND = 60;
     int SKIP_TICKS = 1000 / FRAMES_PER_SECOND;
     long nextGameTick = System.currentTimeMillis();
     int sleepTime = 0;
@@ -11,7 +10,6 @@ public class GameLoop implements Runnable {
     int actualFPS = FRAMES_PER_SECOND;
 	
     Window window;
-    CellList cl;
     
     public GameLoop(Window ex) {
     	window = ex;
@@ -19,7 +17,7 @@ public class GameLoop implements Runnable {
     }
     
     public void init() {
-    	cl = new CellList();
+    	
     }
     
 	@Override
@@ -52,8 +50,7 @@ public class GameLoop implements Runnable {
 	
 	public void update() {
 		
-		// Update the cell list as the last step before drawing
-		window.updateCellList(cl);
+		
 	}
 	
 	public void draw() {
